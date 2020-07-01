@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'reusable-filter';
+  selectedItem = 0
+  filterItems = [
+    {id:1 , name: 'AU Finance Bank'},
+    {id:2 , name: 'Ujjivan Finance Bank'},
+    {id:3 , name: 'SBI Card'},
+    {id:4 , name: 'ICICI Bank'},
+    {id:5 , name: 'Axis Bank'},
+    {id:6 , name: 'Allahabaad bank'},
+    {id:7 , name: 'Canara Bank'},
+  ]
+
+  selectedItemEvent(value){
+    this.selectedItem = value
+  }
 }

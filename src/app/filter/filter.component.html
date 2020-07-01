@@ -1,0 +1,25 @@
+<select (change)="onChange(optionValue.value)" #optionValue>
+    <option  
+    *ngFor="let item of filterItems" [value]="item.id" [selected]="item.id === selectedItem">{{ item.name }}
+</option>
+</select>
+
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" #matFormField>
+      <input type="text"
+             aria-label="Number"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto"
+             #autoCompleteInput>
+             <button *ngIf="showCloseIcon && allowClear" mat-icon-button matSuffix (click)="remove()">
+                <mat-icon>close</mat-icon>
+              </button>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getSelectedItems($event.option.value)'>
+        <mat-option *ngFor="let option of filterItems" [value]="option.name">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
