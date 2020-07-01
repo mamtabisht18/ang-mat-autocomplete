@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  selectedItem = 0
+  
+  selectedItem = ''
   filterItems = [
     {id:1 , name: 'AU Finance Bank'},
     {id:2 , name: 'Ujjivan Finance Bank'},
